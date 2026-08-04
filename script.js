@@ -10,6 +10,9 @@ copyCount.innerText = 0; // default copy
 const heartCount = document.getElementById("heart-count");
 heartCount.innerText = 0; // default heartcount
 
+// call history holder
+const callHistoryHolder = [];
+
 // Implemented using event delegation technique
 document.getElementById("card-section").addEventListener('click', ((event) => {
     // console.log(event.target.classList.value);
@@ -43,6 +46,39 @@ document.getElementById("card-section").addEventListener('click', ((event) => {
             getCoinsElement.innerText = newCoins;
 
             // store into call history
+            const callHistory = {
+                serName: serviceName.innerText,
+                serNumber: serviceNumber.innerText,
+                time: new Date().toLocaleString()
+            }
+            callHistoryHolder.push(callHistory); // stored into the holder
+            // console.log(callHistory, callHistoryHolder);
+
+            if (callHistoryHolder.length > 0) {
+                const callHistParent = document.getElementById("call-history-parent");
+
+                callHistParent.innerText = "";
+                for (const hist of callHistoryHolder) {
+                    const newDiv = document.createElement("div");
+                    newDiv.classList.add(
+                        "flex", "justify-between", "items-center", "bg-[#FAFAFA]", "rounded-lg", "p-2", "mt-2"
+                    );
+                    newDiv.innerHTML = `<div class="mt-2">
+                        <h2 class="text-sm font-bold">${hist.serName}</h2>
+                        <p class="text-sm">${hist.serNumber}</p>
+                    </div>
+                    <div>
+                        <p>${hist.time}</p>
+                    </div>`;
+
+                    callHistParent.appendChild(newDiv);
+                }
+
+            } else {
+                console.log("Something wrong Happend!");
+
+            }
+
         }
         else {
             alert("You do not enough coins.")
