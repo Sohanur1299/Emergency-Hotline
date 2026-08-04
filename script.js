@@ -25,15 +25,18 @@ document.getElementById("card-section").addEventListener('click', ((event) => {
     }
 
 
-    const btn = event.target.closest(".copy-btn-class"); // starting from where I clicked, upward asking does it have copy btn class? no? go upward
-    if (btn) {
+    const btn2 = event.target.closest(".copy-btn-class"); // starting from where I clicked, upward asking does it have copy btn class? no? go upward
+
+    const btn1 = event.target.closest(".clip-btn-class");
+    // const btn1 = event.target.closest(".");
+    if (btn2) {
         const getCoinsElement = document.getElementById("show-coin");
         const availableCoins = parseInt(getCoinsElement.innerText);
         if (availableCoins >= 20) {
             // console.log(btn.innerText);
             // console.log(btn.parentNode.parentNode);
             // nthCard = btn.parentNode.parentNode; // whole card 
-            nthCard = btn.closest(".nth-card"); // whole nth card
+            nthCard = btn2.closest(".nth-card"); // whole nth card
             // console.log(nthCard);
             // element.querySelector(selector) - searches inside the element only
             serviceName = nthCard.querySelector(".service-name");
@@ -85,11 +88,29 @@ document.getElementById("card-section").addEventListener('click', ((event) => {
             return;
         }
 
-
-
     } else {
         console.log('not the COPY button!');
     }
+    // challenge part
+    if (btn1) {
+        const copyelem = document.getElementById("copy-count");
+        let getcopycount = parseInt(copyelem.innerText);
+        alert(`Number Copied!`);
+        getcopycount += 1;
+        copyelem.innerText = getcopycount;
+
+        const nthCard1 = btn1.closest(".nth-card");
+        const service_number = nthCard1.querySelector(".service-number");
+        navigator.clipboard.writeText(service_number.innerText);
+    }
+}))
+
+
+//  clear call history implemented
+document.getElementById("btn-clear").addEventListener('click', ((e) => {
+    const getCallHistory = document.getElementById("call-history-parent");
+    getCallHistory.innerText = ""; // make the board empty
+    callHistoryHolder.length = 0;
 }))
 
 
