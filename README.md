@@ -1,6 +1,8 @@
 # Emergency-Hotline
 
 Answer the following questions clearly:
+
+
 ##What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
 Ans: getElementById helps to get an element using it's given "#id" name whereas getElementsByClassName helps to get elements whom have the same class names. Both querySelector / querySelectorAll helps doing the work mentioned earlier but if there's several elements exists with the same class name, it will return the first matched element and it can be used to query in inside of an element like nthElement.querySelecto(".class-btn") will give me  element having the class-btn inside of that parent nthELement which is very convenient.
 
