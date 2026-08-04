@@ -20,28 +20,53 @@
 
 <body class="bg-[#F5FFF6]">
     <!-- nav bar -->
-    <nav class="max-w-[calc(100%-7.5rem)] mx-auto flex justify-between items-center px-6 py-4 rounded-2xl">
+    <nav class="
+        w-[calc(100%-2rem)]
+        md:max-w-[calc(100%-7.5rem)]
+        mx-auto
+        flex flex-col md:flex-row
+        justify-between
+        items-center
+        gap-4
+        px-4 md:px-6
+        py-4
+        rounded-2xl">
 
-        <div class="left-side">
-            <img src="assets/logo.png" alt="" class="w-12 h-12">
+        <!-- Left side -->
+        <div class="left-side flex items-center gap-3">
+            <img src="assets/logo.png" alt="Emergency Service" class="w-10 h-10 md:w-12 md:h-12">
 
-            <h1 class="text-2xl font-bold leading-6">Emergency <br>Service</h1>
+            <h1 class="text-xl md:text-2xl font-bold leading-5 md:leading-6">
+                Emergency <br>
+                Service
+            </h1>
         </div>
 
-        <div class="right-side flex items-center gap-4">
 
-            <div id="heart" class="flex items-center gap-2 bg-green-100 rounded-full px-5 py-2">
+        <!-- Right side -->
+        <div class="right-side flex items-center gap-2 md:gap-4">
+
+            <!-- Heart -->
+            <div id="heart" class="flex items-center gap-1 md:gap-2 bg-green-100 rounded-full px-3 md:px-5 py-2">
                 <span class="font-bold">0</span>
-                <img src="assets/heart.png" alt="" class="w-6 h-6">
+
+                <img src="assets/heart.png" alt="" class="w-5 h-5 md:w-6 md:h-6">
             </div>
 
 
-            <div id="coins" class="flex items-center gap-2 bg-green-100 rounded-full px-5 py-2">
-                <span class="font-bold">0</span>
-                <img src="assets/coin.png" alt="" class="w-6 h-6">
+            <!-- Coins -->
+            <div id="coins" class="flex items-center gap-1 md:gap-2 bg-green-100 rounded-full px-3 md:px-5 py-2">
+                <span id="show-coin" class="font-bold">0</span>
+
+                <img src="assets/coin.png" alt="" class="w-5 h-5 md:w-6 md:h-6">
             </div>
 
-            <button class="btn btn-success rounded-full px-6">2 Copy</button>
+
+            <!-- Copy -->
+            <button id="copy-count" class="btn btn-success rounded-full px-4 md:px-6">
+                2 Copy
+            </button>
+
         </div>
 
     </nav>
