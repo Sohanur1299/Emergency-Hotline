@@ -21,3 +21,7 @@ Ans: Instead of using multiple event listeners, we use a single event listener a
 ##What is the difference between preventDefault() and stopPropagation() methods?
 Ans: preventDefault() > stops default behaviour of browser such as auto reloading of using form tag
 stopPropagation() > In order to stop event bubble flow upward we use this.
+
+
+#live link
+https://dancing-madeleine-f1cca3.netlify.app/
